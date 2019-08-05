@@ -83,6 +83,7 @@ myApp.controller('mainController', function($scope,$http,$route,$location) {
             }  
 
         });
+        document.getElementById('greyout').style.display = 'block';
         document.getElementById('btnLogin').style.visibility='visible';
         
     }

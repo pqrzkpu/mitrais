@@ -1,4 +1,21 @@
-        <div class="row justify-content-center" ng-controller="mainController">
+<style>
+.greyout
+{
+    background-color: white;
+    filter:alpha(opacity=50); /* IE */
+    opacity: 0.5; /* Safari, Opera */
+    -moz-opacity:0.50; /* FireFox */
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+}
+</style>        
+            <div class="row justify-content-center" ng-controller="mainController">
                 <div class="col-md-9">
                     <div class="user-pro-box user-pro-box-s2">
                        <div class="row">
@@ -23,10 +40,13 @@
 
                                       </div>
                                     </nav>
+                                    
                                     <div class="tab-content" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="cont-signup" role="tabpanel">
+                                            
                                             <span class="form-heading">Create an account to join our community.</span>
                                             <form name="SaveForm" ng-submit="registerSubmit()" class="signup-form"> 
+                                                <div id="greyout" class="greyout" style="display:none"></div>
                                                 <div class="input-item">
                                                     <input type="text" placeholder="Mobile Number" class="input-border-simple" name="phoneNumber" ng-model="phoneNumber"  ng-pattern="/^\+?(62)\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})?[-. ]?([0-9]{4})$/" ng-required="true" maxlength="16" autofocus>
                                                     <em class="fas fa-phone"></em>
@@ -86,12 +106,8 @@
                                                     <span style="color:red" ng-show="SaveForm.email.$dirty && SaveForm.email.$invalid" class="ng-hide">Please enter valid email</span>
                                                 </div>
                                                
-                                                <div class="d-xl-flex justify-content-between align-items-center ">
+                                                <div id="btnRegister" class="d-xl-flex justify-content-between align-items-center ">
                                                     <input type="submit" class="btn btn-sm btn-block" value="Register">
-                                                </div>
-                                                <div class="gaps"></div>
-                                                <div id="btnLogin" class="d-xl-flex justify-content-between align-items-center" style="visibility:hidden;">
-                                                    <a class="btn btn-sm btn-block" href="#login">Login</a>
                                                 </div>
                                             </form>
                                         </div>
@@ -99,6 +115,17 @@
                                </div>
                            </div>
                        </div>
+                       <div class="row">
+                           <div class="col-lg-9">
+                               <div class="user-pro-info"></div>
+                           </div>
+                           <div class="col-lg-3">
+                                <div class="gaps"></div>
+                                <div id="btnLogin" class="d-flex justify-content-between align-items-center" style="visibility: hidden;">
+                                    <a class="btn btn-sm btn-block" href="#login">Log in</a>
+                                </div>
+                           </div>
+                        </div>
                     </div>
 
                     <div class="form-footer d-flex justify-content-between">

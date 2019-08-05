@@ -1,0 +1,158 @@
+        <div class="row justify-content-center" ng-controller="mainController">
+                <div class="col-md-9">
+                    <div class="user-pro-box user-pro-box-s2">
+                       <div class="row">
+                           <div class="col-lg-3">
+                               <div class="user-pro-info">
+                                   <div class="user-logo">
+                                        <a href="#">
+                                            <img src="images/extra-pages/mitrais-logo-purple.png"  srcset="images/extra-pages/logo-sm-white2x.png 2x" alt="icon">
+                                        </a>
+                                    </div>
+                                    <div class="user-graphics">
+                                        <img src="images/jasmine/graph-jasmine-b.png" alt="user">
+                                    </div>
+                                   
+                               </div>
+                           </div>
+                           <div class="col-lg-9">
+                               <div class="user-pro-form">
+                                   <nav>
+                                      <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#cont-signup">Registration</a>
+
+                                      </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="cont-signup" role="tabpanel">
+                                            <span class="form-heading">Create an account to join our community.</span>
+                                            <form name="SaveForm" ng-submit="registerSubmit()" class="signup-form"> 
+                                                <div class="input-item">
+                                                    <input type="text" placeholder="Mobile Number" class="input-border-simple" name="phoneNumber" ng-model="phoneNumber"  ng-pattern="/^\+?(62)\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})?[-. ]?([0-9]{4})$/" ng-required="true" maxlength="16" autofocus>
+                                                    <em class="fas fa-phone"></em>
+                                                    <span style="color:red" ng-show="SaveForm.phoneNumber.$dirty && SaveForm.phoneNumber.$invalid" class="ng-hide"> Please enter valid Indonesian phone number</span>
+                                                </div>
+                                                <div class="input-item">
+                                                    <input type="text" placeholder="First Name" class="input-border-simple" name="firstName" ng-model="firstName" ng-required="true" maxlength="25">
+                                                    <em class="fas fa-user"></em>
+                                                </div>
+                                                <div class="input-item">
+                                                    <input type="text" placeholder="Last Name" class="input-border-simple" name="lastName" ng-model="lastName" ng-required="true" maxlength="25">
+                                                    <em class="fas fa-user"></em>
+                                                </div>
+                                                <div class="row gutter-20">
+                                                    <div class="col-lg-4">
+                                                        <div class="input-item">
+                                                            <select name="month" id="month" ng-model="month" class="input-border-simple">
+                                                                <option value="" disabled>Month</option>
+                                                            </select>
+                                                            <em class="fas fa-calendar"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="input-item">
+                                                            <select name="date" id="date" ng-model="date" class="input-border-simple">
+                                                                <option value="" disabled>Date</option>
+                                                            </select>
+                                                            <em class="fas fa-calendar"></em>
+                                                        </div>
+                                                    </div>
+                                                     <div class="col-lg-4">
+                                                        <div class="input-item">
+                                                            <select name="year" id="year" ng-model="year" class="input-border-simple">
+                                                                <option value="" disabled>Year</option>
+                                                            </select>
+                                                            <em class="fas fa-calendar"></em>
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                                 <div class="row gutter-20">
+                                                    <div class="col-lg-6">
+                                                        <div class="input-item form-check form-check-inline">
+                                                            <input type="radio" name="gender" ng-model="gender" value="1" class="form-check-input">
+                                                            <label class="form-check-label">Male</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-item form-check form-check-inline">
+                                                            <input type="radio" name="gender" ng-model="gender" value="0" class="form-check-input">
+                                                            <label class="form-check-label">Female</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-item">
+                                                    <input type="text" placeholder="Email" class="input-border-simple" name="email" ng-model="email" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" ng-required="true"  maxlength="100" >
+                                                    <em class="fas fa-envelope"></em>
+                                                    <span style="color:red" ng-show="SaveForm.email.$dirty && SaveForm.email.$invalid" class="ng-hide">Please enter valid email</span>
+                                                </div>
+                                               
+                                                <div class="d-xl-flex justify-content-between align-items-center ">
+                                                    <input type="submit" class="btn btn-sm btn-block" value="Register">
+                                                </div>
+                                                <div class="gaps"></div>
+                                                <div id="btnLogin" class="d-xl-flex justify-content-between align-items-center" style="visibility:hidden;">
+                                                    <a class="btn btn-sm btn-block" href="#login">Login</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+
+                    <div class="form-footer d-flex justify-content-between">
+                       <span>Copyright © 2019 Rizka Utami.</span>
+                       <ul class="form-footer-links">
+                           <li><a href=""><em class="fas fa-envelope"></em> mail@rizkautami.com</a></li>
+                           <li><a href=""><em class="fas fa-phone"></em> +62 877-6076-0898</a></li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+
+
+<script type="text/javascript">
+//var d = new Date();
+//month
+var monthArray = new Array();
+monthArray[0]   = "January";
+monthArray[1]   = "February";
+monthArray[2]   = "March";
+monthArray[3]   = "April";
+monthArray[4]    = "May";
+monthArray[5]   = "June";
+monthArray[6]   = "July";
+monthArray[7]   = "August";
+monthArray[8]   = "September";
+monthArray[9]   = "October";
+monthArray[10]  = "November";
+monthArray[11]  = "December";
+for(m = 0; m <= 11; m++) {
+    var optn    = document.createElement("option");
+    optn.text   = monthArray[m];
+    // server side month start from one
+    optn.value  = (m+1);
+ 
+    document.getElementById('month').options.add(optn);
+}
+    
+//date
+for(d = 1; d<= 31; d++){
+    var optn    = document.createElement("option");
+    optn.text   = d;
+    optn.value  = d;
+    
+    document.getElementById('date').options.add(optn);
+}
+    
+//year
+for(y = 1940; y <= 2019; y++) {
+    var optn    = document.createElement("option");
+    optn.text   = y;
+    optn.value  = y;
+        
+    document.getElementById('year').options.add(optn);
+}
+
+</script>
